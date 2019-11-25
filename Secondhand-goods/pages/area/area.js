@@ -1,4 +1,4 @@
-var data= 
+var data =
   [
     {
       "name": "北京市",
@@ -5354,4 +5354,4 @@ var data=
     }
   ]
 
-module.exports=data;
+module.exports = data;

@@ -12,8 +12,7 @@ Page({
         bookAuthor: '',//作者
         bookPress: '',//出版社
         isTextbook: false,//是否资料书
-        conditions: '',//
-        campus: '',// 校区
+        conditions: '',
         price: '', //价格
         remark: '', //备注，详情
         poster: '', //发布者
@@ -45,7 +44,6 @@ Page({
     var bookPress = 'detailData.bookPress';
     var isTextbook = 'detailData.isTextbook';
     var conditions = 'detailData.conditions';
-    var campus = 'detailData.campus';
     var price = 'detailData.price';
     var remark = 'detailData.remark';
     var poster = 'detailData.poster';

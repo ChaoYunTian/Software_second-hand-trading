@@ -18,7 +18,6 @@
         <image class='detail-detail-image' src='./2.png'></image>
       </view>
       <view style='color: green'>辅助资料：{{detailData.isTextbook? "是" : "不是"}}</view>
-      <view style='color: green'>校区：{{detailData.campus}}</view>
       <view style='color: green'>成色：{{detailData.conditions}}</view>
       <view class='detail-detail'>产品详情：{{detailData.remark}}</view>
     </view>

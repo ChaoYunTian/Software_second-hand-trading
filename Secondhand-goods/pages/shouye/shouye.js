@@ -16,10 +16,10 @@ Page({
   data: {
     // 首页的轮播图
     imgUrls: [
-      "/images/shouye/lunbotu7.jpg",
-      "/images/shouye/lunbotu6.jpg",
-      "/images/shouye/lunbotu3.png",
-      "/images/shouye/lunbotu2.png",
+      "/images/shouye/lunbotu8.jpg",
+      "/images/shouye/lunbotu10.jpg",
+      "/images/shouye/lunbotu1.jpg",
+      "/images/shouye/lunbotu9.png",
     ],
     indicatorDots: true,  //是否显示面板指示点
     autoplay: true,      //是否自动切换

@@ -1,6 +1,6 @@
 <!--pages/my/mySetting/mySetting.wxml-->
 <view class='wrapper'>
-  <view class='title'>湖北科技学院唤宝小程序认证</view>
+  <view class='title'>OUC小程序认证</view>
   <view class='student'>
   <view class='student_id'>学号:</view>
   <input value='{{studentId}}' placeholder="20开头" placeholder-class='holder' bindblur='ipnutStudentId'>{{studentId}}</input>
