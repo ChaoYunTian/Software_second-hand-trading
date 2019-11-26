@@ -28,7 +28,7 @@ Page({
     courseName: '', //是资料书的名称 
     conditions: ["全新", "几乎全新", "少量笔记", "较多笔记", "不影响阅读"], //5
     conditionIndex: 2, //
-    campus: ["温泉校区", "咸安校区"], //6
+    campus: ["崂山校区", "鱼山校区","浮山校区"], //6
     campusIndex: 0,
     currentPrice: '', //售价7 物品价格
     postRemark: '', // 备注8
@@ -40,7 +40,7 @@ Page({
     thingConditions: ["全新", "几乎全新", "九成新", "八成新", "七成新", "六成新", "五成新", "五成新以下"],
     thingConditionIndex: 0,
     thingPrice: '',
-    thingCampus: ["温泉校区", "咸安校区"],
+    thingCampus: ["崂山校区", "鱼山校区","浮山校区"],
     thingCampusIndex: 0,
     thingPhoneNumber: '',
     thingDescribe: '',
