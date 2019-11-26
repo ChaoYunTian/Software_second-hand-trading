@@ -7,23 +7,9 @@
     "pages/index/index",
     "pages/release/release",
     "pages/order/order",
-    "pages/search/search",
-    "pages/search-book/search-book",
     "pages/post/post",
-    "pages/movie-detail/movie-detail",
-    "pages/components/news/news",
-    "pages/components/weatherLocationTrand/weatherLocationTrand",
-    "pages/components/recommend/recommend",
-    "pages/sonShouye/movie-more/movie-more",
-    "pages/sonShouye/movie-list/movie-list",
-    "mapWeather/search/search",
-    "mapWeather/regeocoding/regeocoding",
-    "mapWeather/suggestion/suggestion",
-    "pages/my/mySetting/mySetting",
-    "pages/my/myPost/myPost",
-    "pages/my/myorder/myorder",
     "pages/my/purchaseHistory/purchaseHistory",
-    "pages/my/addressAdmin/addressAdmin",
+    
     "pages/my/myCart/myCart",
     "pages/my/systemNotification/systemNotification",
     "pages/classify/thing-search/thing-search",
@@ -39,8 +25,8 @@
   "window": {
     "navigationBarBackgroundColor": "#1E68C9",
     "backgroundTextStyle": "dark",
-    "navigationBarTitleText": "校园二手交易",
-    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "海大交易之家",
+    "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true
   },
   "tabBar": {
@@ -79,5 +65,6 @@
     "color": "#000000",
     "selectedColor": "#1E68C9"
   },
-  "debug": true
+  "debug": true,
+  "sitemapLocation": "sitemap66.json"
 }
