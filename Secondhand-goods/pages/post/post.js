@@ -8,53 +8,19 @@ Page({
    */
   data: {
     //导航栏的数据
-    postBook: true,
-    postThing: false,
-    postJob: false,
-
-    //发布书本的data值
-    bookPhoneNumber: '', //用户电话号码
-    studentId: '', //用户id 10
-    nickname: '', //用户昵称 11
-    ownerGender: '', //用户性别，0女 1男
-    bookFound: false, //
-    bookId: '', //书本id 
-    bookImg: '', //书本图片链接9 物品图片链接
-    bookName: '', //书本名字 1  物品名字 
-    bookAuthor: '', //书本作者2
-    bookPress: '', //书本出版社3
-    phoneNumber: '', //书本价格
-    isTextbook: false, //是否材料书4
-    courseName: '', //是资料书的名称 
-    conditions: ["全新", "几乎全新", "少量笔记", "较多笔记", "不影响阅读"], //5
-    conditionIndex: 2, //
-    campus: ["崂山校区", "鱼山校区","浮山校区"], //6
-    campusIndex: 0,
-    currentPrice: '', //售价7 物品价格
-    postRemark: '', // 备注8
-    buttonLoading: false,
+    postThing: true,
 
     //物品发布的数据
     thingImage: '',
     thingName: '',
-    thingConditions: ["全新", "几乎全新", "九成新", "八成新", "七成新", "六成新", "五成新", "五成新以下"],
+    thingConditions: ["全新", "九成新", "八成新", "七成新", "六成新", "五成新", "五成新以下"],
     thingConditionIndex: 0,
     thingPrice: '',
-    thingCampus: ["崂山校区", "鱼山校区","浮山校区"],
+    thingCampus: ["崂山校区", "鱼山校区"],
     thingCampusIndex: 0,
     thingPhoneNumber: '',
     thingDescribe: '',
-    buttonLoadingThing: false,
-
-    //兼职信息数据
-    jobName: '',
-    jobTime: '',
-    jobPlace: '',
-    jobRequir: '',
-    jobSalary: '',
-    jobWay: '',
-    jobDescribe: '',
-    buttonLoadingJob: false,
+    buttonLoadingThing: false
   },
 
   /**

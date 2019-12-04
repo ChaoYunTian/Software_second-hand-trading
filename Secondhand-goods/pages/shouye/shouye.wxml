@@ -1,5 +1,20 @@
 <!--pages/shouye/shouye.wxml-->
+<import src="../components/news/news.wxml"></import>
+<import src="../components/weatherLocationTrand/weatherLocationTrand.wxml"></import>
 <import src="../components/recommend/recommend.wxml"></import>
+<!-- 最顶端的位置天气时间 -->
+<!-- 1.位置 -->
+<template is="search" data="{{search}}"></template>
+<!-- 2.天气 -->
+<navigator url='../weather/weather'>
+  <view class='weather'>
+    <text>| </text>
+    <image src='{{weatherUrl}}' style='width:40rpx;height:40rpx;margin-top:8rpx;'></image>
+    <text> {{weather_data[0].date}}</text>
+  </view>
+</navigator>
+
+
 
 <!-- 首页的轮播图 -->
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
@@ -32,23 +47,16 @@
   </navigator>
   <navigator url='../classify/welfare/welfare' class='navi navi-gongyi'>
     <view class='leibie fenlei-gongyi'>
-      <image src='../../images/fenlei/jianzhi.png'></image>
-      <view>校园兼职</view>
+      <image src='../../images/fenlei/gongyi.png'></image>
+      <view>爱心公益</view>
     </view>
   </navigator>
 
 </view>
 
 
-<!-- 今日推荐 -->
-
 <!-- 推荐好书 -->
-<view class='tuijian-img'>
-  <text class='tuijian-cont'>今日推荐</text>
-  <image src='../../images/tuijian.png'></image>
-</view>
- 
+
  <template is="recommend" class="tuijian-temp" data="{{inThearters,comingSoon}}"/>
- 
 
 

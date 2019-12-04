@@ -1,5 +1,5 @@
 {
-	"description": "项目配置文件",
+	"description": "项目配置文件。",
 	"packOptions": {
 		"ignore": []
 	},
@@ -8,28 +8,13 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"autoAudits": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		}
+		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.2",
-	"appid": "wx313589447dd684e3",
-	"projectname": "%E6%B5%B7%E5%A4%A7%E4%BA%A4%E6%98%93%E4%B9%8B%E5%AE%B6",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
+	"libVersion": "2.2.1",
+	"appid": "wxdc1c1dc2f2b76777",
+	"projectname": "Second%20Hand%20Trading",
 	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

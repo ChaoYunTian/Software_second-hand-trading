@@ -29,16 +29,8 @@
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </navigator>
 
-  <navigator url="addressAdmin/addressAdmin" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-    <view class="weui-cell__bd">地址管理</view>
-    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-  </navigator>
   <navigator url="myCart/myCart" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
     <view class="weui-cell__bd">购物车</view>
-    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-  </navigator>
-  <navigator url="systemNotification/systemNotification" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-    <view class="weui-cell__bd">系统通知</view>
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </navigator>
   <button class="btm" bindtap='bindClear'>退出帐号</button>
