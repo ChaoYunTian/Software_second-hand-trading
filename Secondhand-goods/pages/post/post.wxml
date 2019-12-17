@@ -70,6 +70,6 @@
     </view>
 
   </view>
-  <button type="primary" size="default" disabled="{{thingName == ''||thingPhoneNumber == ''|| thingImage == '' || thingDescribe == '' ||thingPrice ==''||buttonLoadingThing ? true : false}}" loading="{{buttonLoadingThing}}" bindtap="bindSubmitThing">
+  <button type="primary" size="default" loading="{{buttonLoadingThing}}" bindtap="bindSubmitThing">
     立即发布 </button>
 </view>

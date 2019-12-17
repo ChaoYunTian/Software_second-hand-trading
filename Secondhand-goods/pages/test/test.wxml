@@ -1,0 +1,2 @@
+<!--pages/test/test.wxml-->
+<text>{{notice}}123123</text>
