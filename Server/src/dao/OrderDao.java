@@ -9,7 +9,7 @@ import  java.sql.SQLException;
 import  java.sql.ResultSet;
 
 public class OrderDao {
-    public static Order selectById(int id) throws SQLException{
+    public static Order selectById(int id) throws Exception{
         Connection connection = DBUtil.getConnection();
         String sql = "select * from `order` where id = ?";
         PreparedStatement pst = connection.prepareStatement(sql);
@@ -26,7 +26,7 @@ public class OrderDao {
         return order;
     }
 
-    public int insert(Order order)  throws SQLException{
+    public int insert(Order order)  throws Exception{
         Connection connection = DBUtil.getConnection();
         String sql = "insert into  `order` (uid,gid)" +
                 "values (?,?);";

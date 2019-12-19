@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class NoticeDao {
-    public Notice selectById(int id) throws SQLException{
+    public Notice selectById(int id) throws Exception{
         Connection connection = DBUtil.getConnection();
         String sql = "select * from notice where id = ?";
         PreparedStatement pst = connection.prepareStatement(sql);
@@ -27,7 +27,7 @@ public class NoticeDao {
         return notice;
     }
 
-    public int insert(Notice notice)  throws SQLException{
+    public int insert(Notice notice)  throws Exception{
         Connection connection = DBUtil.getConnection();
         String sql = "insert into  notice (uid,gid,time)" +
                 "values (?,?,?);";

@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class NoticeDaoTest {
     NoticeDao noticeDao = new NoticeDao();
     @Test
-    public void selectTest(){
+    public void selectTest() throws Exception{
         try {
             System.out.println(noticeDao.selectById(2));
         } catch (SQLException e) {
@@ -20,7 +20,7 @@ public class NoticeDaoTest {
     }
 
     @Test
-    public void insertTest(){
+    public void insertTest() throws Exception{
         Notice notice = new Notice();
         notice.setUid(12);
         notice.setGid(22);

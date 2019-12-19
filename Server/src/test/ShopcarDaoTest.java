@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class ShopcarDaoTest {
     ShopcarDao shopcarDao = new ShopcarDao();
     @Test
-    public void selectTest(){
+    public void selectTest() throws Exception{
         try {
             System.out.println(shopcarDao.selectById(1));
         } catch (SQLException e) {
@@ -19,7 +19,7 @@ public class ShopcarDaoTest {
     }
 
     @Test
-    public void insertTest(){
+    public void insertTest() throws Exception{
         Shopcar shopcar = new Shopcar();
         shopcar.setUid(66);
         shopcar.setGid(88);

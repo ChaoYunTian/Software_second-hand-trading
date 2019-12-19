@@ -9,7 +9,7 @@ import  java.sql.SQLException;
 import  java.sql.ResultSet;
 
 public class ShopcarDao {
-    public Shopcar selectById(int id) throws SQLException {
+    public Shopcar selectById(int id) throws Exception {
         //获取数据库连接
         Connection connection = DBUtil.getConnection();
         String sql = "select * from shopcar where id = ?";
@@ -27,7 +27,7 @@ public class ShopcarDao {
         return shopcar;
     }
 
-    public int insert(Shopcar shopcar)  throws SQLException{
+    public int insert(Shopcar shopcar)  throws Exception{
         Connection connection = DBUtil.getConnection();
         String sql = "insert into  shopcar (uid,gid)" +
                 "values (?,?);";

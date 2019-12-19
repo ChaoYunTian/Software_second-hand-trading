@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class OrderDaoTest {
     OrderDao orderDao = new OrderDao();
     @Test
-    public void selectTest(){
+    public void selectTest() throws Exception{
         try {
             System.out.println(orderDao.selectById(2));
         } catch (SQLException e) {
@@ -22,7 +22,7 @@ public class OrderDaoTest {
     }
 
     @Test
-    public void insertTest(){
+    public void insertTest() throws Exception{
         Order order = new Order();
         order.setUid(3);
         order.setGid(3);
