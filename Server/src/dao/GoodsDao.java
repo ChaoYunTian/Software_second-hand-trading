@@ -23,10 +23,11 @@ public class GoodsDao {
             goods.setId(rst.getInt(1));
             goods.setName(rst.getString(2));
             goods.setCampus(rst.getString(3));
-            goods.setQuality(rst.getInt(4));
-            goods.setPrice(rst.getFloat(5));
+            goods.setQuality(rst.getString(4));
+            goods.setPrice(rst.getString(5));
             goods.setTel(rst.getString(6));
             goods.setRemark(rst.getString(7));
+            goods.setThingimg(rst.getString(8));
         }
         
         return goods;
@@ -34,15 +35,16 @@ public class GoodsDao {
 
     public int insert(Goods goods) throws Exception{
         Connection connection = DBUtil.getConnection();
-        String sql = "insert into goods (name, campus, quality, price, tel, remark) " +
-                     "values (?, ?, ?, ?, ?, ?);";
+        String sql = "insert into goods (name, campus, quality, price, tel, remark , thingimg) " +
+                     "values (?, ?, ?, ?, ?, ?, ?);";
         PreparedStatement pst = connection.prepareStatement(sql);
         pst.setString(1, goods.getName());
         pst.setString(2, goods.getCampus());
-        pst.setInt(3, goods.getQuality());
-        pst.setFloat(4, goods.getPrice());
+        pst.setString(3, goods.getQuality());
+        pst.setString(4, goods.getPrice());
         pst.setString(5, goods.getTel());
         pst.setString(6, goods.getRemark());
+        pst.setString(7, goods.getThingimg());
 
         int result = pst.executeUpdate();
         
@@ -88,10 +90,11 @@ public class GoodsDao {
                 goods.setId(rst.getInt(1));
                 goods.setName(rst.getString(2));
                 goods.setCampus(rst.getString(3));
-                goods.setQuality(rst.getInt(4));
-                goods.setPrice(rst.getFloat(5));
+                goods.setQuality(rst.getString(4));
+                goods.setPrice(rst.getString(5));
                 goods.setTel(rst.getString(6));
                 goods.setRemark(rst.getString(7));
+                goods.setThingimg(rst.getString(8));
             }
            
         } catch (ClassNotFoundException e) {
@@ -113,13 +116,23 @@ public class GoodsDao {
             goods.setId(rst.getInt(1));
             goods.setName(rst.getString(2));
             goods.setCampus(rst.getString(3));
-            goods.setQuality(rst.getInt(4));
-            goods.setPrice(rst.getFloat(5));
+            goods.setQuality(rst.getString(4));
+            goods.setPrice(rst.getString(5));
             goods.setTel(rst.getString(6));
             goods.setRemark(rst.getString(7));
+            goods.setThingimg(rst.getString(8));
             list.add(goods);
         }
         
         return list;
     }
+    public int deleteById(int id) throws Exception{
+            int i = 0;
+            Connection connection = DBUtil.getConnection();
+            String sql = "DELETE FROM goods WHERE  id=" + "'" + id + "'" ;
+            PreparedStatement pst = connection.prepareStatement(sql);
+            i = pst.executeUpdate();
+            return i;
+    }
+    
 }

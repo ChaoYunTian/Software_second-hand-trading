@@ -24,16 +24,25 @@ public class GoodsDaoTest {
             e.printStackTrace();
         }
     }
+    @Test
+    public void deleteTest() throws Exception{
+        try {
+            System.out.println(goodsDao.deleteById(13));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Test
     public void insertTest() throws Exception{
         Goods goods = new Goods();
-        goods.setName("123456");
+        goods.setName("行李箱");
         goods.setCampus("崂山校区");
-        goods.setQuality(10);
-        goods.setPrice(25.5f);
-        goods.setTel("621663");
-        goods.setRemark("this is very nice");
+        goods.setQuality("8成新");
+        goods.setPrice("58");
+        goods.setTel("17860711820");
+        goods.setRemark("低价急售");
+        goods.setThingimg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1577091497976&di=01b5705117a077ebb56b05bd59acf74a&imgtype=0&src=http%3A%2F%2Fimg000.hc360.cn%2Fm7%2FM0A%2F83%2FA7%2FwKhQpFcYSbmELBxKAAAAAKaq4yQ095.jpg");
         try {
             if(goodsDao.insert(goods) == 1){
                 System.out.println("insert successful");

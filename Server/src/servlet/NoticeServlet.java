@@ -42,8 +42,8 @@ public class NoticeServlet extends HttpServlet {
 
         int uid = Integer.parseInt(request.getParameter("uid"));
         String name = request.getParameter("name");
-        float price = Float.parseFloat(request.getParameter("price"));
-        int quality = Integer.parseInt(request.getParameter("quality"));
+        String price = request.getParameter("price");
+        String quality = request.getParameter("quality");
         String campus = request.getParameter("campus");
         String tel = request.getParameter("tel");
         String remark = request.getParameter("remark");

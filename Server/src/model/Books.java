@@ -4,15 +4,22 @@ public class Books {
 	private String bookname;
 	private String author;
 	private String publish;
-	private float price;
-	private int jiaofu;
+	private String price;
+	private String jiaofu;
 	private String campus;
-	private int quality;
+	private String quality;
+	private String bookimg;
+	public String getBookimg() {
+		return bookimg;
+	}
+	public void setBookimg(String bookimg) {
+		this.bookimg = bookimg;
+	}
 	@Override
 	public String toString() {
 		return "Books [bookname=" + bookname + ", author=" + author + ", publish=" + publish + ", price=" + price
-				+ ", jiaofu=" + jiaofu + ", campus=" + campus + ", quality=" + quality + ", tel=" + tel + ", remark="
-				+ remark + "]";
+				+ ", jiaofu=" + jiaofu + ", campus=" + campus + ", quality=" + quality + ", bookimg=" + bookimg
+				+ ", tel=" + tel + ", remark=" + remark + "]";
 	}
 	private String tel;
 	private String remark;
@@ -34,16 +41,16 @@ public class Books {
 	public void setPublish(String publish) {
 		this.publish = publish;
 	}
-	public float getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(float price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
-	public int getJiaofu() {
+	public String getJiaofu() {
 		return jiaofu;
 	}
-	public void setJiaofu(int jiaofu) {
+	public void setJiaofu(String jiaofu) {
 		this.jiaofu = jiaofu;
 	}
 	public String getCampus() {
@@ -52,10 +59,10 @@ public class Books {
 	public void setCampus(String campus) {
 		this.campus = campus;
 	}
-	public int getQuality() {
+	public String getQuality() {
 		return quality;
 	}
-	public void setQuality(int quality) {
+	public void setQuality(String quality) {
 		this.quality = quality;
 	}
 	public String getTel() {

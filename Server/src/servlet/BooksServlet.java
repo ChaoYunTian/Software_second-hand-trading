@@ -3,6 +3,8 @@ package servlet;
 import com.google.gson.Gson;
 import dao.BooksDao;
 import model.Books;
+import model.Goods;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 @WebServlet(name = "BooksServlet", urlPatterns = "/books")
@@ -40,17 +43,34 @@ public class BooksServlet extends HttpServlet {
 				e.printStackTrace();
 			}
     	 }
+    	 else if(action.equals("showAll")) {
+    		 try {
+				this.showAll(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	 }
+    	 else if(action.equals("queryBooksByCampus")) {
+    		 try {
+				this.queryBooksByCampus(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	 }
     }
     private void insert(HttpServletRequest request, HttpServletResponse response) throws Exception {
    	 String bookname = request.getParameter("bookname");
    	 String author = request.getParameter("author");
    	 String publish=request.getParameter("publish");
-   	float price=Integer.parseInt(request.getParameter("price"));
-   	int jiaofu=Integer.parseInt(request.getParameter("jiaofu"));
+   	String price=request.getParameter("price");
+   	String jiaofu=request.getParameter("jiaofu");
     String campus = request.getParameter("campus");
-   	 int quality=Integer.parseInt(request.getParameter("quality"));
+   	 String quality=request.getParameter("quality");
    	 String tel=request.getParameter("tel");
    	 String remark=request.getParameter("remark");
+   	 String bookimg=request.getParameter("bookimg");
    	 Books books=new Books();
    	 books.setBookname(bookname);
    	 books.setAuthor(author);
@@ -61,6 +81,7 @@ public class BooksServlet extends HttpServlet {
    	 books.setQuality(quality);
    	 books.setTel(tel);
    	 books.setRemark(remark);
+   	 books.setBookimg(bookimg);
         int result = 0;
         try {
             result = booksDao.insert(books);
@@ -75,11 +96,28 @@ public class BooksServlet extends HttpServlet {
    	 String bookname = request.getParameter("bookname");
         Books result = null;
         result = booksDao.queryBooksList(bookname);
-        HttpSession session = request.getSession();
-        session.setAttribute("resultList", result);
         PrintWriter out = response.getWriter();
         out.write(new Gson().toJson(result));
         out.flush();
    }
+    private void showAll(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        ArrayList<Books> result = null;
+        try {
+            result = booksDao.showAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        PrintWriter out = response.getWriter();
+        out.write(new Gson().toJson(result));
+        out.flush();
+   }
+    private void queryBooksByCampus(HttpServletRequest request, HttpServletResponse response) throws Exception {
+      	 String campus = request.getParameter("campus");
+           Books result = null;
+           result = booksDao.queryBooksList(campus);
+           PrintWriter out = response.getWriter();
+           out.write(new Gson().toJson(result));
+           out.flush();
+      }
     
 }

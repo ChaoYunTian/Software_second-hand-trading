@@ -3,6 +3,8 @@ package servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import dao.JobDao;
+import model.Books;
 import model.Job;
 
 /**
@@ -29,6 +32,14 @@ public class JobServlet extends HttpServlet {
 	    	 if(action.equals("insert")) {
 	    		 try {
 					this.insert(request, response);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	    	 }
+	    	 else if(action.equals("showAll")) {
+	    		 try {
+					this.showAll(request, response);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -55,6 +66,17 @@ public class JobServlet extends HttpServlet {
 	        int result = 0;
 	        try {
 	            result = jobDao.insert(job);
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	        PrintWriter out = response.getWriter();
+	        out.write(new Gson().toJson(result));
+	        out.flush();
+	   }
+	    private void showAll(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	        ArrayList<Job> result = null;
+	        try {
+	            result = jobDao.showAll();
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	        }

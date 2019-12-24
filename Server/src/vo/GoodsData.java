@@ -24,4 +24,7 @@ public class GoodsData {
     public ArrayList<Goods> showAll() throws Exception {
     	return dao.showAll();
     }
+    public int deleteById(int id) throws Exception {
+    	return dao.deleteById(id);
+    }
 }

@@ -28,4 +28,14 @@ public class JobDaoTest {
 	            e.printStackTrace();
 	        }
 	    }
+	 @Test
+	    public void showAll() throws Exception{
+	        try {
+	        	for (int i = 0; i < jobDao.showAll().size(); i++) {
+	                System.out.println(jobDao.showAll().get(i));
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
 }

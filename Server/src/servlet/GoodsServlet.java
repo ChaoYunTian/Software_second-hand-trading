@@ -44,6 +44,14 @@ public class GoodsServlet extends HttpServlet {
 				e.printStackTrace();
 			}
          }
+    	 else if(action.equals("deleteById")) {
+    		 try {
+				this.deleteById(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	 }
     	 else if(action.equals("insert")) {
     		 try {
 				this.insert(request, response);
@@ -89,13 +97,26 @@ public class GoodsServlet extends HttpServlet {
          out.write(new Gson().toJson(result));
          out.flush();
     }
+    private void deleteById(HttpServletRequest request, HttpServletResponse response) throws Exception {
+   	 int id = Integer.parseInt(request.getParameter("id"));
+        int result = 0;
+        try {
+            result = goodsDao.deleteById(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        PrintWriter out = response.getWriter();
+        out.write(new Gson().toJson(result));
+        out.flush();
+   }
     private void insert(HttpServletRequest request, HttpServletResponse response) throws Exception {
    	 String name = request.getParameter("name");
    	 String campus=request.getParameter("campus");
-   	 int quality=Integer.parseInt(request.getParameter("quality"));
-   	 int price=Integer.parseInt(request.getParameter("price"));
+   	 String quality=request.getParameter("quality");
+   	 String price=request.getParameter("price");
    	 String tel=request.getParameter("tel");
    	 String remark=request.getParameter("remark");
+   	 String thingimg=request.getParameter("thingimg");
    	 Goods goods=new Goods();
    	 goods.setName(name);
    	 goods.setCampus(campus);
@@ -103,6 +124,7 @@ public class GoodsServlet extends HttpServlet {
    	 goods.setPrice(price);
    	 goods.setTel(tel);
    	 goods.setRemark(remark);
+   	 goods.setThingimg(thingimg);
         int result = 0;
         try {
             result = goodsDao.insert(goods);
@@ -136,8 +158,6 @@ public class GoodsServlet extends HttpServlet {
         ArrayList<Goods> result = null;
         try {
             result = goodsDao.showAll();
-            HttpSession session = request.getSession();
-            session.setAttribute("result", result);
         } catch (SQLException e) {
             e.printStackTrace();
         }

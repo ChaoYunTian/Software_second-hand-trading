@@ -1,30 +1,25 @@
 package servlet;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-
-import dao.UserDao;
-import model.Books;
-import model.Sheet;
-import model.UserAddress;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import vo.IndexData;
-import vo.Sheetitem;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
+import dao.UserDao;
+import model.UserAddress;
+
+/**
+ * Servlet implementation class UserServlet
+ */
 @WebServlet(name = "UserServlet", urlPatterns = "/user")
 public class UserServlet extends HttpServlet {
 
