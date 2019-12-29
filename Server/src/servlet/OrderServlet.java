@@ -37,10 +37,11 @@ public class OrderServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));;
         Order result = null;
         try {
-            result = selectById(id);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+			result = selectById(id);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         PrintWriter out = response.getWriter();
         out.write(new Gson().toJson(result));
         out.flush();

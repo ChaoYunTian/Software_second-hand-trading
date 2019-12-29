@@ -34,10 +34,11 @@ public class ShopcarServlet extends HttpServlet{
         int id = Integer.parseInt(request.getParameter("id"));;
         Shopcar result = null;
         try {
-            result = shopcarDao.selectById(id);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+			result = shopcarDao.selectById(id);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         PrintWriter out = response.getWriter();
         out.write(new Gson().toJson(result));
         out.flush();

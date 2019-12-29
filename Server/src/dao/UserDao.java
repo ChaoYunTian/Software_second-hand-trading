@@ -1,16 +1,15 @@
 package dao;
 
-import model.Goods;
 import model.User;
+import model.UserAddress;
 import util.DBUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class UserDao {
-    public int selectByStuidAndPwd(String stuid, String pwd) throws SQLException {
+    public int selectByStuidAndPwd(String stuid, String pwd) throws Exception {
         //获取数据库连接
         Connection connection = DBUtil.getConnection();
         String sql = "select id from user where stuid = ? and password = ?";
@@ -21,11 +20,10 @@ public class UserDao {
         int result = 0;
         if (rst.next())
             result = rst.getInt(1);
-        DBUtil.close(rst, pst, connection);
         return result;
     }
 
-    public int insert(User user) throws SQLException{
+    public int insert(User user) throws Exception{
         Connection connection = DBUtil.getConnection();
         String sql = "insert into user (stuid, nickname, password, address) " +
                 "values (?, ?, ?, ?);";
@@ -36,7 +34,21 @@ public class UserDao {
         pst.setString(4, user.getAddress());
 
         int result = pst.executeUpdate();
-        DBUtil.close(null, pst, connection);
         return result;
+    }
+    public int insertAd(UserAddress useraddress) throws Exception {
+    	  Connection connection = DBUtil.getConnection();
+          String sql = "insert into useraddress (name, tel, province, city, county, address) " +
+                  "values (?, ?, ?, ? ,? ,?);";
+          PreparedStatement pst = connection.prepareStatement(sql);
+          pst.setString(1, useraddress.getName());
+          pst.setString(2, useraddress.getTel());
+          pst.setString(3, useraddress.getProvince());
+          pst.setString(4, useraddress.getCity());
+          pst.setString(5, useraddress.getCounty());
+          pst.setString(6, useraddress.getAddress());
+
+          int result = pst.executeUpdate();
+          return result;
     }
 }

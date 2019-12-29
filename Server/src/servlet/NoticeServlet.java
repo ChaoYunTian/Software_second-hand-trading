@@ -3,7 +3,6 @@ package servlet;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 
-import com.sun.deploy.net.HttpRequest;
 import dao.GoodsDao;
 import dao.NoticeDao;
 import model.Goods;
@@ -39,12 +38,12 @@ public class NoticeServlet extends HttpServlet {
         doGet(request,response);
     }
 
-    void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    void add(HttpServletRequest request, HttpServletResponse response) throws Exception{
 
         int uid = Integer.parseInt(request.getParameter("uid"));
         String name = request.getParameter("name");
-        float price = Float.parseFloat(request.getParameter("price"));
-        int quality = Integer.parseInt(request.getParameter("quality"));
+        String price = request.getParameter("price");
+        String quality = request.getParameter("quality");
         String campus = request.getParameter("campus");
         String tel = request.getParameter("tel");
         String remark = request.getParameter("remark");
@@ -82,7 +81,12 @@ public class NoticeServlet extends HttpServlet {
 
         String method = request.getParameter("method");
         if("add".equals(method)) {
-            add(request, response);
+            try {
+				add(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
 
     }
